@@ -1,0 +1,70 @@
+@import "./constants";
+
+body {
+  margin: 5px $margin;
+  padding: 0;
+  background-color: #c3cfe2;
+  text-align: center;
+}
+
+.flex-container {
+  @include portfolio();
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio {
+  position: relative;
+  flex: 100%;
+  max-width: $width;
+  margin: 5px;
+  &__image {
+    @include portfolio();
+    display: block;
+    border-radius: $borderRadius;
+  }
+  &__image--overlay {
+    @include portfolio();
+    position: $position;
+    opacity: 0;
+    transition: 0.5s ease-out;
+    background-color: darkmagenta;
+    border-radius: $borderRadius;
+  }
+  &__imageButton {
+    font-size: 13px;
+    padding: 5px 8px;
+    position: $position;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  &:hover &__image--overlay {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 15px;
+    margin-right: 5px;
+  }
+  .portfolio {
+    flex: 48%;
+    max-width: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    margin-left: 90px;
+  }
+  .portfolio {
+    flex: 28%;
+    max-width: 28%;
+    margin: 10px;
+  }
+}

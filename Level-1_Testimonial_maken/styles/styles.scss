@@ -1,0 +1,44 @@
+@import "./constants";
+
+body {
+  background-color: #c3cfe2;
+  text-align: center;
+  font-family: "Helvetica", Arial, sans-serif;
+  margin: 50px;
+  line-height: 35px;
+  width: 370px;
+}
+
+.main {
+  @include boxShadow();
+  background-color: #fff;
+  font-size: 18px;
+  height: 285px;
+  padding: 25px 40px;
+  border-radius: $borderRadius $borderRadius 0px 0px;
+  &__text {
+    text-align: left;
+  }
+  &__portret {
+    width: 110px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    transform: translateY(2px);
+  }
+}
+
+.footer {
+  @include boxShadow();
+  background-color: #686de0;
+  color: #fff;
+  padding-top: 65px;
+  height: 80px;
+  border: 0px solid grey;
+  border-radius: 0px 0px $borderRadius $borderRadius;
+  line-height: 25px;
+  &__link a {
+    text-decoration: none;
+    color: rgb(185, 185, 248);
+    font-size: 14px;
+  }
+}
